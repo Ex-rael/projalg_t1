@@ -41,9 +41,12 @@ public class lcsDynamicProgramming {
         String str1 = "AGGTAB";
         String str2 = "GXTXAYB";
 
+        long timerIni = System.nanoTime();
         String result = lcs(str1, str2);
+        long timerFim = System.nanoTime();
 
         System.out.println("LCS: " + result);
         System.out.println("Length of LCS: " + result.length());
+        System.out.println("Timer: " + (timerFim - timerIni));
     }
 }
