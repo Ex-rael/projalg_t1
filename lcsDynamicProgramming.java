@@ -1,5 +1,5 @@
 public class lcsDynamicProgramming {
-
+    static int iters = 0;
     // Method to find the LCS using dynamic programming
     public static String lcs(String s1, String s2) {
         int m = s1.length();
@@ -16,6 +16,7 @@ public class lcsDynamicProgramming {
                 } else {
                     dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
                 }
+		iters++;
             }
         }
 
@@ -32,6 +33,7 @@ public class lcsDynamicProgramming {
             } else {
                 j--;
             }
+	    iters++;
         }
 
         return lcs.reverse().toString(); // Reversed because we built it backwards
@@ -47,6 +49,7 @@ public class lcsDynamicProgramming {
 
         System.out.println("LCS: " + result);
         System.out.println("Length of LCS: " + result.length());
-        System.out.println("Timer: " + (timerFim - timerIni));
+        System.out.println("Timer: " + (timerFim - timerIni) + " ns");
+	System.out.println("Iterations: " + iters);
     }
 }
